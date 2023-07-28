@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>xiexulei&#39;s blog</title>
+  <title>C语言实现字符串操作 | xiexulei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="一个工程师的日常记录，早期因为懒惰而不写博客，随着年龄的增长渐渐意识到写作的重要性了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiexulei&#39;s blog">
-<meta property="og:url" content="https://xuleixie.github.io/index.html">
+  <meta name="description" content="1. 字符串的定义字符串是由一个或多个字符组成的有限序列，又称为字符串常量。字符串常量是用双引号括起来的字符序列，如”hello”、”C语言”等。字符串常量是一种基本数据类型，它的实质是一维字符数组。字符串常量的长度是字符串中字符的个数加1，即字符串常量的长度等于字符数组的长度加1。例如，字符串常量”hello”的长度是6，字符数组的长度是5。 2. 字符串的输入输出2.1 字符串的输入字符串的输">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言实现字符串操作">
+<meta property="og:url" content="https://xuleixie.github.io/2023/07/27/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="xiexulei&#39;s blog">
-<meta property="og:description" content="一个工程师的日常记录，早期因为懒惰而不写博客，随着年龄的增长渐渐意识到写作的重要性了">
+<meta property="og:description" content="1. 字符串的定义字符串是由一个或多个字符组成的有限序列，又称为字符串常量。字符串常量是用双引号括起来的字符序列，如”hello”、”C语言”等。字符串常量是一种基本数据类型，它的实质是一维字符数组。字符串常量的长度是字符串中字符的个数加1，即字符串常量的长度等于字符数组的长度加1。例如，字符串常量”hello”的长度是6，字符数组的长度是5。 2. 字符串的输入输出2.1 字符串的输入字符串的输">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-27T09:35:36.000Z">
+<meta property="article:modified_time" content="2023-07-28T02:06:01.926Z">
 <meta property="article:author" content="xiexulei">
 <meta property="article:tag" content="linux,Android">
 <meta name="twitter:card" content="summary">
@@ -78,136 +80,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/28/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-07-28T02:06:01.926Z" itemprop="datePublished">2023-07-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xuleixie.github.io/2023/07/28/hello-world/" data-id="clklxzlym0003f5ox55lq0ss1" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="photo-myPhoto" class="h-entry article article-type-photo" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/27/myPhoto/" class="article-date">
-  <time class="dt-published" datetime="2023-07-27T09:51:02.000Z" itemprop="datePublished">2023-07-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/27/myPhoto/">myPhoto</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xuleixie.github.io/2023/07/27/myPhoto/" data-id="clklxzlyo0005f5oxacb5gsfj" data-title="myPhoto" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-通信协议入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/27/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/" class="article-date">
-  <time class="dt-published" datetime="2023-07-27T09:50:31.000Z" itemprop="datePublished">2023-07-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/27/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/">通信协议入门</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-通信协议的概念"><a href="#1-通信协议的概念" class="headerlink" title="1. 通信协议的概念"></a>1. 通信协议的概念</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xuleixie.github.io/2023/07/27/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/" data-id="clklxzlyp0007f5ox6hdydke1" data-title="通信协议入门" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-C语言实现字符串操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-C语言实现字符串操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/07/27/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/" class="article-date">
   <time class="dt-published" datetime="2023-07-27T09:35:36.000Z" itemprop="datePublished">2023-07-27</time>
@@ -220,8 +93,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/27/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/">C语言实现字符串操作</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      C语言实现字符串操作
     </h1>
   
 
@@ -347,11 +220,23 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/27/%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          通信协议入门
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
+</article>
 
 
 </section>
