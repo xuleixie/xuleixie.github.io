@@ -80,6 +80,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-qt中报错allocation-of-incomplete-type-Ui-解决方案" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+  <time class="dt-published" datetime="2023-08-22T03:17:33.000Z" itemprop="datePublished">2023-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">qt中报错allocation of incomplete type Ui::解决方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在qt中创建ui的时候，一般有以下几步：<br>以sendFrameBox为例</p>
+<ol>
+<li>直接创建一个qt设计器界面类：<br><img src="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/new_ui.png"></li>
+<li>填写类名：<br><img src="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/newclass.png"></li>
+<li>选择界面模板：<br><img src="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/choose_groupbox.png"></li>
+<li>完成<br><img src="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/success.png"></li>
+</ol>
+<h2 id="报错现象"><a href="#报错现象" class="headerlink" title="报错现象"></a>报错现象</h2><p>此时会提示找不到ui_sendframebox.h文件，因为只有build后才会产生该文件，但此时执行build，仍然会报错：<br><img src="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/error.png"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>可以将ui初始化的代码先注释掉，<br><img src="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/note.png"><br>然后build，build完成后再放开注释，此时就正常了：<br><img src="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/solved.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xuleixie.github.io/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-id="clllykgpv0007e1os2w61agdx" data-title="qt中报错allocation of incomplete type Ui::解决方案" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-cpp中的lambda表达式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/18/cpp%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2023-08-18T09:04:11.000Z" itemprop="datePublished">2023-08-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/18/cpp%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">cpp中的lambda表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xuleixie.github.io/2023/08/18/cpp%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="clllykgpr0003e1os6nv8dsq0" data-title="cpp中的lambda表达式" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-cpp基础总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/18/cpp%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2023-08-18T07:23:45.000Z" itemprop="datePublished">2023-08-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/08/18/cpp%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">cpp基础总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基本数据类型的长度"><a href="#基本数据类型的长度" class="headerlink" title="基本数据类型的长度"></a>基本数据类型的长度</h2><p>如下图：<br><img src="/2023/08/18/cpp%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/built-intypesizes.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xuleixie.github.io/2023/08/18/cpp%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" data-id="clllykgpu0005e1osg2h39wtm" data-title="cpp基础总结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-C语言实现字符串操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/07/27/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/" class="article-date">
@@ -213,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xuleixie.github.io/2023/07/27/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/" data-id="clllyddhw0001eeopgew85dmq" data-title="C语言实现字符串操作" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://xuleixie.github.io/2023/07/27/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/" data-id="clllykgpn0001e1os1rf000gq" data-title="C语言实现字符串操作" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -243,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
     </div>
   </div>
 
@@ -254,6 +378,18 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/08/22/qt%E4%B8%AD%E6%8A%A5%E9%94%99allocation-of-incomplete-type-Ui-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">qt中报错allocation of incomplete type Ui::解决方案</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/18/cpp%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">cpp中的lambda表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/18/cpp%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">cpp基础总结</a>
+          </li>
         
           <li>
             <a href="/2023/07/27/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/">C语言实现字符串操作</a>
