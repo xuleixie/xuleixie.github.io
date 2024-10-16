@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: xiexulei's blog
-subtitle: '工程记录'
-description: '一个工程师的日常记录，早期因为懒惰而不写博客，随着年龄的增长渐渐意识到写作的重要性了'
+title: Paul's blog
+subtitle: '不积跬步，无以至千里'
+description: '创作永不停止，爱是永不止息'
 keywords: 'linux,Android'
 author: xiexulei
 language: en
@@ -100,8 +100,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
-
+theme: hexo-theme-freemind
+inverse: true
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
