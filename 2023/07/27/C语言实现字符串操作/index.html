@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>C语言实现字符串操作 | Paul&#39;s blog</title>
+  <meta name="author" content="xiexulei">
+  
+  <meta name="description" content="创作永不停止，爱是永不止息">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="C语言实现字符串操作"/>
+  <meta property="og:site_name" content="Paul&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="Paul&#39;s blog" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/bootstrap.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight-default.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/comment.css" media="screen" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+  <![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+  
+    <script src="/js/marked.js"></script>
+    <script src="/js/comment.js"></script>
+    <script src="/js/timeago.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+	<script src="/js/spin.min.js"></script>
+  
+  
+  <!-- analytics -->
+  
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">Paul&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+    <div class="content">
+      
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> C语言实现字符串操作</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h2 id="1-字符串的定义"><a href="#1-字符串的定义" class="headerlink" title="1. 字符串的定义"></a>1. 字符串的定义</h2><p>字符串是由一个或多个字符组成的有限序列，又称为字符串常量。字符串常量是用双引号括起来的字符序列，如”hello”、”C语言”等。字符串常量是一种基本数据类型，它的实质是一维字符数组。字符串常量的长度是字符串中字符的个数加1，即字符串常量的长度等于字符数组的长度加1。例如，字符串常量”hello”的长度是6，字符数组的长度是5。</p>
+<h2 id="2-字符串的输入输出"><a href="#2-字符串的输入输出" class="headerlink" title="2. 字符串的输入输出"></a>2. 字符串的输入输出</h2><h3 id="2-1-字符串的输入"><a href="#2-1-字符串的输入" class="headerlink" title="2.1 字符串的输入"></a>2.1 字符串的输入</h3><p>字符串的输入可以用scanf函数，也可以用gets函数。scanf函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,str);</span><br></pre></td></tr></table></figure>
+<p>gets函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gets(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gets(str);</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-字符串的输出"><a href="#2-2-字符串的输出" class="headerlink" title="2.2 字符串的输出"></a>2.2 字符串的输出</h3><p>字符串的输出可以用printf函数，也可以用puts函数。printf函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,str);</span><br></pre></td></tr></table></figure>
+<p>puts函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">puts</span>(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">puts</span>(str);</span><br></pre></td></tr></table></figure>
+<h2 id="3-字符串的赋值"><a href="#3-字符串的赋值" class="headerlink" title="3. 字符串的赋值"></a>3. 字符串的赋值</h2><p>字符串的赋值可以用赋值运算符，也可以用strcpy函数。赋值运算符的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串名=字符串;</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">&quot;hello&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>strcpy函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcpy</span>(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcpy</span>(str1,str2);</span><br></pre></td></tr></table></figure>
+<h2 id="4-字符串的连接"><a href="#4-字符串的连接" class="headerlink" title="4. 字符串的连接"></a>4. 字符串的连接</h2><p>字符串的连接可以用strcat函数。strcat函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcat</span>(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcat</span>(str1,str2);</span><br></pre></td></tr></table></figure>
+<h2 id="5-字符串的比较"><a href="#5-字符串的比较" class="headerlink" title="5. 字符串的比较"></a>5. 字符串的比较</h2><p>字符串的比较可以用strcmp函数。strcmp函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcmp</span>(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcmp</span>(str1,str2);</span><br></pre></td></tr></table></figure>
+<h2 id="6-字符串的长度"><a href="#6-字符串的长度" class="headerlink" title="6. 字符串的长度"></a>6. 字符串的长度</h2><p>字符串的长度可以用strlen函数。strlen函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strlen</span>(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strlen</span>(str);</span><br></pre></td></tr></table></figure>
+<h2 id="7-字符串的复制"><a href="#7-字符串的复制" class="headerlink" title="7. 字符串的复制"></a>7. 字符串的复制</h2><p>字符串的复制可以用strncpy函数。strncpy函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strncpy</span>(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>,复制的字符个数);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strncpy</span>(str1,str2,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="8-字符串的查找"><a href="#8-字符串的查找" class="headerlink" title="8. 字符串的查找"></a>8. 字符串的查找</h2><p>字符串的查找可以用strstr函数。strstr函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strstr</span>(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strstr</span>(str1,str2);</span><br></pre></td></tr></table></figure>
+<h2 id="9-字符串的分割"><a href="#9-字符串的分割" class="headerlink" title="9. 字符串的分割"></a>9. 字符串的分割</h2><p>字符串的分割可以用strtok函数。strtok函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strtok(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strtok(str1,str2);</span><br></pre></td></tr></table></figure>
+<h2 id="10-字符串的转换"><a href="#10-字符串的转换" class="headerlink" title="10. 字符串的转换"></a>10. 字符串的转换</h2><p>字符串的转换可以用atoi函数、atol函数、atof函数。atoi函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atoi(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atoi(str);</span><br></pre></td></tr></table></figure>
+<p>atol函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atol(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atol(str);</span><br></pre></td></tr></table></figure>
+<p>atof函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atof(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">atof(str);</span><br></pre></td></tr></table></figure>
+<h2 id="11-字符串的填充"><a href="#11-字符串的填充" class="headerlink" title="11. 字符串的填充"></a>11. 字符串的填充</h2><p>字符串的填充可以用memset函数。memset函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(字符串名,填充的字符,填充的字符个数);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(str,<span class="string">&#x27;*&#x27;</span>,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="12-字符串的反转"><a href="#12-字符串的反转" class="headerlink" title="12. 字符串的反转"></a>12. 字符串的反转</h2><p>字符串的反转可以用strrev函数。strrev函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strrev(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strrev(str);</span><br></pre></td></tr></table></figure>
+<h2 id="13-字符串的大小写转换"><a href="#13-字符串的大小写转换" class="headerlink" title="13. 字符串的大小写转换"></a>13. 字符串的大小写转换</h2><p>字符串的大小写转换可以用strupr函数、strlwr函数。strupr函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strupr(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strupr(str);</span><br></pre></td></tr></table></figure>
+<p>strlwr函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strlwr(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strlwr(str);</span><br></pre></td></tr></table></figure>
+<h2 id="14-字符串的排序"><a href="#14-字符串的排序" class="headerlink" title="14. 字符串的排序"></a>14. 字符串的排序</h2><p>字符串的排序可以用strsort函数。strsort函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strsort(字符串名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strsort(str);</span><br></pre></td></tr></table></figure>
+<h2 id="15-字符串的插入"><a href="#15-字符串的插入" class="headerlink" title="15. 字符串的插入"></a>15. 字符串的插入</h2><p>字符串的插入可以用strins函数。strins函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strins(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>,插入的位置);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strins(str1,str2,<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="16-字符串的删除"><a href="#16-字符串的删除" class="headerlink" title="16. 字符串的删除"></a>16. 字符串的删除</h2><p>字符串的删除可以用strdel函数。strdel函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strdel(字符串名,删除的位置,删除的字符个数);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strdel(str,<span class="number">5</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="17-字符串的替换"><a href="#17-字符串的替换" class="headerlink" title="17. 字符串的替换"></a>17. 字符串的替换</h2><p>字符串的替换可以用strrep函数。strrep函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strrep(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>,替换的位置,替换的字符个数);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strrep(str1,str2,<span class="number">5</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="18-字符串的比较"><a href="#18-字符串的比较" class="headerlink" title="18. 字符串的比较"></a>18. 字符串的比较</h2><p>字符串的比较可以用strcmp函数。strcmp函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcmp</span>(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strcmp</span>(str1,str2);</span><br></pre></td></tr></table></figure>
+<h2 id="19-字符串的查找"><a href="#19-字符串的查找" class="headerlink" title="19. 字符串的查找"></a>19. 字符串的查找</h2><p>字符串的查找可以用strstr函数。strstr函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strstr</span>(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">strstr</span>(str1,str2);</span><br></pre></td></tr></table></figure>
+<h2 id="20-字符串的分割"><a href="#20-字符串的分割" class="headerlink" title="20. 字符串的分割"></a>20. 字符串的分割</h2><p>字符串的分割可以用strtok函数。strtok函数的格式为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strtok(字符串名<span class="number">1</span>,字符串名<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strtok(str1,str2);</span><br></pre></td></tr></table></figure>
+
+
+	  
+	</div>
+
+	<!-- recommended posts -->
+	
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+		<li class="prev"><a href="/2023/08/18/cpp%E4%B8%AD%E7%9A%84lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+          <li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
+    
+        
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
+        
+
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+    	 
+	 <div id="comment-thread"></div>
+	 <div id="loading-spin"></div>
+	 <script type="text/javascript">
+	   getComments({
+           type: "github" ? "github" : "github",       
+	       user: "wzpan",
+	       repo: "hexo-theme-freemind-blog",
+		   client_id: "bf7d4ba11877db88543e",
+           client_secret: "bff8a6b06b745c0bfcdccbe225623ea8e2a057bb",
+		   no_comment: "No comments yet. Press the button and go to comment now!",
+		   go_to_comment: "Go to comment",
+		   no_issue: "no_issue",
+		   issue_title: "C语言实现字符串操作",
+		   issue_id: "",
+		   btn_class: "btn btn-primary",
+		   comments_target: "#comment-thread",
+		   loading_target: "#loading_spin"
+		   });
+	 </script>
+  
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-07-27 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+
+    </div>
+  </div>
+  <div class="container-narrow">
+    <footer> <p>
+  &copy; 2024 xiexulei
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+<!-- syntax highlighting -->
+
+  <script>
+  marked.setOptions({
+    highlight: function (code, lang) {
+        return hljs.highlightAuto(code).value;
+    }
+  });
+  function Highlighting(){
+    var markdowns = document.getElementsByClassName('markdown');
+    for(var i=0;i<markdowns.length;i++){
+        if(markdowns[i].innerHTML) markdowns[i].innerHTML =marked(markdowns[i].innerHTML);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', Highlighting, false);
+  window.addEventListener('load', Highlighting, false);
+  </script>
+
+
+</body>
+</html>
