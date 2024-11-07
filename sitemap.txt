@@ -1,3 +1,6 @@
+https://xuleixie.github.io/2024/10/25/%E5%88%A9%E7%94%A8qt%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B1%9E%E6%80%A7%E5%B0%86C-%E5%AF%B9%E8%B1%A1%E5%B5%8C%E5%85%A5%E5%88%B0QML%E4%B8%AD/
+https://xuleixie.github.io/2024/10/17/%E6%80%8E%E6%A0%B7%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B%EF%BC%9F/
+https://xuleixie.github.io/2024/10/28/%E8%B5%84%E6%BA%90%E7%A7%AF%E7%B4%AF/
 https://xuleixie.github.io/about/index.html
 https://xuleixie.github.io/categories/index.html
 https://xuleixie.github.io/gallery/index.html
@@ -5,6 +8,10 @@ https://xuleixie.github.io/tags/index-1.html
 https://xuleixie.github.io/tags/index-2.html
 https://xuleixie.github.io/tags/index.html
 https://xuleixie.github.io/tags/index.html
+https://xuleixie.github.io/2024/10/28/8051%E5%8D%95%E7%89%87%E6%9C%BA%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/
+https://xuleixie.github.io/2024/10/30/CANoe%E9%80%9A%E4%BF%A1%E7%90%86%E5%BF%B5/
+https://xuleixie.github.io/2024/10/29/Qt%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%80%A7/
 https://xuleixie.github.io/2023/12/13/autosar%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/
+https://xuleixie.github.io/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/
 https://xuleixie.github.io/404/index.html
 https://xuleixie.github.io/

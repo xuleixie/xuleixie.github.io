@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>autosar基础知识 | Paul&#39;s blog</title>
+  <title>利用qt的上下文属性将C++对象嵌入到QML中 | Paul&#39;s blog</title>
   <meta name="author" content="xiexulei">
   
   <meta name="description" content="创作永不停止，爱是永不止息">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="autosar基础知识"/>
+  <meta property="og:title" content="利用qt的上下文属性将C++对象嵌入到QML中"/>
   <meta property="og:site_name" content="Paul&#39;s blog"/>
 
   
@@ -100,7 +100,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> autosar基础知识</h1>
+			<h1 class="title title-inverse "> 利用qt的上下文属性将C++对象嵌入到QML中</h1>
 		</div>		
 	
 
@@ -120,7 +120,13 @@
 	<div class="mypage">		
 	  		
 
-	  	  
+	  <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>当我们在C++应用中加载QML的时候，直接嵌入一些C++数据到QML代码中是非常有用的，这使得调用嵌入对象中的C++方法或者使用C++对象实例作为数据模型成为可能。<br>使用QQmlContext类即可将C++对象注入到QML中，这个类将数据暴露到QML的上下文中，以便于在QML范围内能被直接引用。</p>
+<h2 id="设置简单的上下文属性"><a href="#设置简单的上下文属性" class="headerlink" title="设置简单的上下文属性"></a>设置简单的上下文属性</h2><p>有如下代码，在QML范围内引用了一个不存在的值currentDateTime：</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyItem.qml</span></span><br><span class="line"><span class="keyword">import</span> QtQuick <span class="number">2.0</span></span><br><span class="line"></span><br><span class="line"><span class="title">Text</span> &#123;<span class="attribute">text</span>: currentDateTime&#125;</span><br></pre></td></tr></table></figure>
+<p>这个值可在加载QML的C++中直接设置，使用QQmlContext::setContextProperty():</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">QQuickView view;</span><br><span class="line">view.rootContext()-&gt;setContextProperty(<span class="string">&quot;currentDateTime&quot;</span>, <span class="attribute">QDateTime</span>::currentDateTime());</span><br><span class="line">view.setSource(<span class="attribute">QUrl</span>::fromLocalFile(<span class="string">&quot;MyItem.qml&quot;</span>));</span><br><span class="line">view.show();</span><br></pre></td></tr></table></figure>
+
+<h2 id="将对象设置为上下文属性"><a href="#将对象设置为上下文属性" class="headerlink" title="将对象设置为上下文属性"></a>将对象设置为上下文属性</h2>	  
 	</div>
 
 	<!-- recommended posts -->
@@ -132,13 +138,13 @@
 <ul class="pagination">
 	 
 				
-		<li class="prev"><a href="/2024/10/17/%E6%80%8E%E6%A0%B7%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B%EF%BC%9F/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+		<li class="prev"><a href="/2024/10/28/%E8%B5%84%E6%BA%90%E7%A7%AF%E7%B4%AF/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-          <li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+          <li class="next"><a href="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -189,7 +195,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2023-12-13 
+	2024-10-25 
 	</div>
 	
 

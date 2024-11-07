@@ -4,6 +4,97 @@
   
     
     <entry>
+      <title>CANoe通信理念</title>
+      <link href="/2024/10/30/CANoe%E9%80%9A%E4%BF%A1%E7%90%86%E5%BF%B5/"/>
+      <url>/2024/10/30/CANoe%E9%80%9A%E4%BF%A1%E7%90%86%E5%BF%B5/</url>
+      
+        <content type="html"><![CDATA[<p>CANoe通信的关键概念是应用部分和传输媒体的严格分离，基于这个理念，canoe在两者之间提供了一个通信层，叫做中间件</p><p>仿真：仿真包含所有在真实控制单元中可能出现的基本传输行为，控制单元的行为被全部仿真<br>激励：刺激的目的是诱导网络中控制单元的反应，例如，这里可以简单地只发送消息</p><h2 id="canoe分析（analysis）功能"><a href="#canoe分析（analysis）功能" class="headerlink" title="canoe分析（analysis）功能"></a>canoe分析（analysis）功能</h2><p>关键词：展示、解释、记录、回放数据（总线数据、变量、和诊断参数）</p><ul><li>接收数据：在线分析和离线分析都是可能的。</li></ul><ol><li>在线数据源是通过硬件连接的仿真总线或真实总线上的数据（例如CANcardXL）</li><li>离线数据源是一个包含记录数据的文件</li></ol><ul><li>处理数据<br>为了提供数据的清晰表示，可以使用过滤器来指定允许哪些数据，哪些数据要显式过滤掉。过滤器可以在测量期间或之后激活，并且可以过滤从单个信号到整个总线系统通道的数据。<br>-数据的表示<br>数据有不同的表示方式，取决于分析的需求，例如：</li></ul><ol><li>使用信号图表进行图形化表示<br>2.展示信号值<br>3.展示测量的序列和状态<br>4.位的值和状态的图形化表示</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Qt核心模块的一些特性</title>
+      <link href="/2024/10/29/Qt%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%80%A7/"/>
+      <url>/2024/10/29/Qt%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<p>Qt核心模块在C++中添加了以下特性：</p><ul><li>信号和槽机制</li><li>可查询和可设计的对象属性</li><li>分层和可查询的对象树，用保护指针以自然的方式组织对象所有权（QPointer）</li><li>跨库边界工作的动态强制转换<br>以下页面为Qt的核心特性提供了更多信息</li></ul><h2 id="元对象系统（Meta-Object-System）"><a href="#元对象系统（Meta-Object-System）" class="headerlink" title="元对象系统（Meta-Object System）"></a>元对象系统（Meta-Object System）</h2><p>Qt的元对象系统为内部对象通信提供了信号和槽机制，运行时类型信息，动态属性系统</p><ol><li>QObject类为所有可以从元对象系统受益的对象提供了一个基类</li><li>Q_OBJECT宏用于打开元对象系统；</li><li>元对象编译器（MOC）支持每一个带有必要代码的QObject的子类实现元对象特性<br>moc工具读取C++源文件，如果发现其中包含Q_OBJECT宏，它会生成一个额外的C++源文件，其中包含元对象代码，这个生成的源文件会被包含进类的源文件里面，或者更一般地，编译并且链接到类的实现。</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>8051单片机知识积累</title>
+      <link href="/2024/10/28/8051%E5%8D%95%E7%89%87%E6%9C%BA%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+      <url>/2024/10/28/8051%E5%8D%95%E7%89%87%E6%9C%BA%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/</url>
+      
+        <content type="html"><![CDATA[<p>PSEN：</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>资源积累</title>
+      <link href="/2024/10/28/%E8%B5%84%E6%BA%90%E7%A7%AF%E7%B4%AF/"/>
+      <url>/2024/10/28/%E8%B5%84%E6%BA%90%E7%A7%AF%E7%B4%AF/</url>
+      
+        <content type="html"><![CDATA[<p>你必须有一张地图，不管它有多粗糙。否则你将会到处乱逛，在指环王中我从来不会让任何人在一天之中走得更远。—-J.R.R.托尔金</p><p>工程师三大思维：产品思维，技术思维，工程思维</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>利用qt的上下文属性将C++对象嵌入到QML中</title>
+      <link href="/2024/10/25/%E5%88%A9%E7%94%A8qt%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B1%9E%E6%80%A7%E5%B0%86C-%E5%AF%B9%E8%B1%A1%E5%B5%8C%E5%85%A5%E5%88%B0QML%E4%B8%AD/"/>
+      <url>/2024/10/25/%E5%88%A9%E7%94%A8qt%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B1%9E%E6%80%A7%E5%B0%86C-%E5%AF%B9%E8%B1%A1%E5%B5%8C%E5%85%A5%E5%88%B0QML%E4%B8%AD/</url>
+      
+        <content type="html"><![CDATA[<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>当我们在C++应用中加载QML的时候，直接嵌入一些C++数据到QML代码中是非常有用的，这使得调用嵌入对象中的C++方法或者使用C++对象实例作为数据模型成为可能。<br>使用QQmlContext类即可将C++对象注入到QML中，这个类将数据暴露到QML的上下文中，以便于在QML范围内能被直接引用。</p><h2 id="设置简单的上下文属性"><a href="#设置简单的上下文属性" class="headerlink" title="设置简单的上下文属性"></a>设置简单的上下文属性</h2><p>有如下代码，在QML范围内引用了一个不存在的值currentDateTime：</p><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyItem.qml</span></span><br><span class="line"><span class="keyword">import</span> QtQuick <span class="number">2.0</span></span><br><span class="line"></span><br><span class="line"><span class="title">Text</span> &#123;<span class="attribute">text</span>: currentDateTime&#125;</span><br></pre></td></tr></table></figure><p>这个值可在加载QML的C++中直接设置，使用QQmlContext::setContextProperty():</p><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">QQuickView view;</span><br><span class="line">view.rootContext()-&gt;setContextProperty(<span class="string">&quot;currentDateTime&quot;</span>, <span class="attribute">QDateTime</span>::currentDateTime());</span><br><span class="line">view.setSource(<span class="attribute">QUrl</span>::fromLocalFile(<span class="string">&quot;MyItem.qml&quot;</span>));</span><br><span class="line">view.show();</span><br></pre></td></tr></table></figure><h2 id="将对象设置为上下文属性"><a href="#将对象设置为上下文属性" class="headerlink" title="将对象设置为上下文属性"></a>将对象设置为上下文属性</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Qt工程打包流程（保姆级）</title>
+      <link href="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/"/>
+      <url>/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="环境及工具准备"><a href="#环境及工具准备" class="headerlink" title="环境及工具准备"></a>环境及工具准备</h2><ol><li>windows环境</li><li>安装Qt开发环境，包含Qt Creator（过程略）；</li><li>下载安装Inno setup compiler打包工具，下载地址：<a href="https://www.jrsoftware.org/isdl.php">Inno setup compiler</a>（过程略）；</li></ol><h2 id="工程构建"><a href="#工程构建" class="headerlink" title="工程构建"></a>工程构建</h2><ol><li>使用Qt Creator打开工程，选择Release或Minimum Size Release模式（具体差异不太清楚），构建工程：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/build.png" alt="图1"></li><li>找到构建后生成的文件夹，将里面产生的exe文件拷贝到另一个空文件夹：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/release.png" alt="图2"><br>使用qt提供的deploy工具，在命令窗口中执行以下命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">windeployqt release.exe</span><br></pre></td></tr></table></figure>如果提示没有该工具，将该工具所在的路径添加到环境变量中，一般在构建套件的bin目录下：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/windeployqt.png" alt="部署工具"><br>执行后会产生一些dll文件，如下图：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/windeploy.png" alt="图3"></li></ol><h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><ol><li>打开Inno setup compiler，根据脚本向导新建一个脚本文件，如下图：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/scriptWizard.png" alt="新建脚本文件"></li><li>填入安装包的基本信息：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/scriptWizard2.png" alt="填写应用信息"></li><li>选择exe文件的位置：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/exeFileSelect.png" alt="选择exe文件位置"></li><li>依次选择安装包的输出路径，安装包名称，选择安装包的图标文件，如下图：<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/setIcon.png" alt="设置应用图标"><br>一路下一步，直到脚本文件的创建，将其保存，然后编译脚本文件，如果有错误，修复错误直到编译通过，然后点击运行按钮，等待打包完成，会在输出路径下生成一个安装包。双击即可安装运行。<br><img src="/2024/10/24/windows%E7%8E%AF%E5%A2%83-Qt%E5%B7%A5%E7%A8%8B%E6%89%93%E5%8C%85%E6%B5%81%E7%A8%8B/compileAndRun.png" alt="编译脚本文件"></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>怎样学习编程？</title>
+      <link href="/2024/10/17/%E6%80%8E%E6%A0%B7%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B%EF%BC%9F/"/>
+      <url>/2024/10/17/%E6%80%8E%E6%A0%B7%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="编程四大件"><a href="#编程四大件" class="headerlink" title="编程四大件"></a>编程四大件</h2><p>数据结构与算法，操作系统…</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>autosar基础知识</title>
       <link href="/2023/12/13/autosar%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
       <url>/2023/12/13/autosar%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
