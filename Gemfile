@@ -19,10 +19,6 @@ gem "github-pages", "~> 232", group: :jekyll_plugins
   # gem "jekyll-feed", "~> 0.12"
   # gem 'jekyll-sass-converter', '~> 1.5.2'
 # end
-# group :jekyll_plugins do
-#  gem "jekyll-feed", "~> 0.12"
-#  gem 'jekyll-sass-converter', '~> 1.5.2'
-# end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
