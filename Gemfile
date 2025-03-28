@@ -16,6 +16,10 @@ gem "webrick", "~> 1.7"
 gem "github-pages", "~> 232", group: :jekyll_plugins
 # If you have any plugins, put them here!
 # group :jekyll_plugins do
+  # gem "jekyll-feed", "~> 0.12"
+  # gem 'jekyll-sass-converter', '~> 1.5.2'
+# end
+# group :jekyll_plugins do
 #  gem "jekyll-feed", "~> 0.12"
 #  gem 'jekyll-sass-converter', '~> 1.5.2'
 # end
