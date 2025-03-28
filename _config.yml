@@ -31,10 +31,9 @@ github_username:  jekyll
 
 # Build settings
 theme: minima
-remote_theme: "jekyll/minima@1e8a445"
 plugins:
   - jekyll-feed
-port: 4001
+  - jekyll-seo-tag
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
