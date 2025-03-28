@@ -1,4 +1,5 @@
 title: 为你创作
+url: https://xuleixie.github.io/
 author:
   name: xulei Xie
   email: xuleixie@gmail.com
@@ -21,7 +22,6 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-github-metadata
 # Minima specific settings, which are only available from Minima 3.0 onward.
 minima:
   # Minima skin selection.
