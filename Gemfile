@@ -36,4 +36,4 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # gem "jekyll-github-metadata"
 
-gem "jekyll-compose", group: [:jekyll_plugins]
+# gem "jekyll-compose", group: [:jekyll_plugins]
