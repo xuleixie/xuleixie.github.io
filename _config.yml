@@ -17,12 +17,12 @@ description: >
 # As of November 2023, GitHub Pages still uses Minima 2.5.1 (https://pages.github.com/versions/). 
 # If you want to use the latest Minima version on GitHub Pages, use the following setting and 
 # add a line comment on "theme: minima" above.
-remote_theme: jekyll/minima
+remote_theme: jekyll/minima@v2.5.2
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  # - jekyll-github-metadata
+  - jekyll-github-metadata
 # Minima specific settings, which are only available from Minima 3.0 onward.
 minima:
   # Minima skin selection.
