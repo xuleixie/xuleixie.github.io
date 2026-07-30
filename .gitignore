@@ -6,3 +6,4 @@ vendor
 Gemfile.lock
 node_modules
 .bundle
+docs/_build/
