@@ -1,3 +1,43 @@
 ---
-layout: home
+layout: default
+title: 首页
 ---
+
+<p>{{ site.description }}</p>
+
+<nav class="nav-links">
+  <a class="btn" href="{{ '/about/' | relative_url }}">关于</a>
+  <a class="btn" href="{{ '/archives/' | relative_url }}">归档</a>
+  <a class="btn" href="{{ '/categories/' | relative_url }}">分类</a>
+  <a class="btn" href="{{ '/tags/' | relative_url }}">标签</a>
+</nav>
+
+{% assign posts = paginator.posts | default: site.posts %}
+{% if posts and posts.size > 0 %}
+  <h2>最新文章</h2>
+  <ul class="post-list">
+    {% for post in posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.excerpt %}
+          <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if paginator.total_pages and paginator.total_pages > 1 %}
+    <nav class="pagination">
+      {% if paginator.previous_page %}
+        <a class="btn" href="{{ paginator.previous_page_path | relative_url }}">上一页</a>
+      {% endif %}
+      <span>第 {{ paginator.page }} / {{ paginator.total_pages }} 页</span>
+      {% if paginator.next_page %}
+        <a class="btn" href="{{ paginator.next_page_path | relative_url }}">下一页</a>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% else %}
+  <p>暂无文章。</p>
+{% endif %}
