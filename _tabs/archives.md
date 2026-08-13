@@ -1,6 +1,6 @@
 ---
 title: 归档
-icon: fas fa-stream
+icon: fas fa-archive
 order: 1
 ---
 
