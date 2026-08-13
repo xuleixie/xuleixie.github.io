@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.0"
+gem "jekyll-remote-theme"
 
 group :jekyll_plugins do
   gem "jekyll-paginate"
