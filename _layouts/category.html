@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h1>分类：{{ page.title }}</h1>
+
+{% assign posts = page.posts | default: site.categories[page.title] %}
+{% if posts and posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>该分类下暂无文章。</p>
+{% endif %}

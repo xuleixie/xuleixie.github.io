@@ -1,0 +1,30 @@
+---
+---
+
+@import "jekyll-theme-hacker";
+
+.nav-links,
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.post-list,
+.taxonomy-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-list li,
+.taxonomy-list li {
+  margin-bottom: 1rem;
+}
+
+.post-meta {
+  display: block;
+  color: #8ca;
+  font-size: 0.95rem;
+}

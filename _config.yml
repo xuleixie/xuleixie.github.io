@@ -7,10 +7,7 @@ description: >-
   站在巨人的肩膀上，追求卓越，探索发现
 url: "https://xuleixie.github.io"
 baseurl: ""
-
-
-github:
-  username: xuleixie
+repository: xuleixie/xuleixie.github.io
 
 twitter:
   username: xiexulei3
@@ -29,6 +26,11 @@ avatar: ""
 toc: true
 
 paginate: 10
+
+collections:
+  tabs:
+    output: true
+    permalink: /:name/
 
 plugins:
   - jekyll-paginate
@@ -60,10 +62,10 @@ defaults:
       toc: true
       permalink: /posts/:title/
   - scope:
-      path: _tabs
+      path: ""
+      type: tabs
     values:
       layout: page
-      permalink: /:title/
 
 sass:
   style: compressed
@@ -78,3 +80,4 @@ exclude:
   - rollup.config.js
   - package*.json
   - node_modules
+  - vendor
