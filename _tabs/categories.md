@@ -4,7 +4,7 @@ icon: fas fa-stream
 order: 2
 ---
 
-{% assign categories = site.categories | sort %}
+{% assign categories = site.categories %}
 {% if categories and categories.size > 0 %}
 <ul class="taxonomy-list">
   {% for category in categories %}

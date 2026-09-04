@@ -4,7 +4,7 @@ icon: fas fa-tags
 order: 3
 ---
 
-{% assign tags = site.tags | sort %}
+{% assign tags = site.tags %}
 {% if tags and tags.size > 0 %}
 <ul class="taxonomy-list">
   {% for tag in tags %}
