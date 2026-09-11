@@ -51,48 +51,34 @@ if ([string]::IsNullOrWhiteSpace($normalized)) {
 
 $postFileName = "{0}-{1}.md" -f $dateStr, $normalized
 $postDir = Join-Path $PSScriptRoot "_posts"
+$imageDir = Join-Path $PSScriptRoot (Join-Path "assets\img\posts" $normalized)
 
 if (-not (Test-Path $postDir)) {
     New-Item -ItemType Directory -Path $postDir | Out-Null
+}
+
+if (-not (Test-Path $imageDir)) {
+    New-Item -ItemType Directory -Path $imageDir -Force | Out-Null
+    New-Item -ItemType File -Path (Join-Path $imageDir ".gitkeep") | Out-Null
 }
 
 $postPath = Join-Path $postDir $postFileName
 $titleText = $normalized -replace "-", " "
 $now = (Get-Date).ToString("yyyy-MM-dd HH:mm")
 
-$categoriesText = Build-YamlArrayText -Values $Categories
-$tagsText = Build-YamlArrayText -Values $Tags
+# $categoriesText = Build-YamlArrayText -Values $Categories
+# $tagsText = Build-YamlArrayText -Values $Tags
 
 $defaultTemplate = @"
 ---
 layout: post
 title: "$titleText"
 date: $now +0800
-categories: $categoriesText
-tags: $tagsText
+categories: []
+tags: []
 ---
 
 写文章正文内容...
-
-## 背景
-
-在这里写背景介绍。
-
-## 关键点
-
-- 关键点 1
-- 关键点 2
-- 关键点 3
-
-## 代码示例
-
-```bash
-echo "Hello Jekyll"
-```
-
-## 总结
-
-总结这篇文章的要点。
 "@
 
 if (Test-Path $TemplatePath) {
@@ -109,6 +95,7 @@ if (Test-Path $TemplatePath) {
 Set-Content -Path $postPath -Value $content -Encoding UTF8
 
 Write-Host "已创建文章: $postPath"
+Write-Host "已创建图片目录: $imageDir"
 
 if (-not $NoOpen) {
     try {

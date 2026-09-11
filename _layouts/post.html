@@ -10,7 +10,9 @@ layout: default
   <p class="view">by {{ author_name }}</p>
 {% endif %}
 
-{{ content }}
+<div class="post-content">
+  {{ content }}
+</div>
 
 {% if page.categories or page.tags %}
   <p class="post-meta">
@@ -25,3 +27,5 @@ layout: default
     {% endif %}
   </p>
 {% endif %}
+
+<script src="{{ '/assets/js/image-zoom.js' | relative_url }}" defer></script>
